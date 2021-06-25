@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 dotenv.config();
 app.use(express.json());
-// connectDB();
+connectDB();
 app.use("/api/employees", employeeRoutes);
 app.use(errorHandler);
 // app.use(notFound);
