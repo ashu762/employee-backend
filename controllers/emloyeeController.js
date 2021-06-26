@@ -13,6 +13,7 @@ export const postEmployee = asyncHandler(async (req, res) => {
     comments,
     gender,
   } = req.body;
+
   const employee = await Employee.create({
     firstName,
     lastName,
