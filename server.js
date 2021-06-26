@@ -5,9 +5,14 @@ import connectDB from "./db.js";
 import colors from "colors";
 import employeeRoutes from "./routes/employeeRoutes.js";
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import cors from "cors";
 
 const app = express();
-
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.get("/", (req, res) => {
   res.send("Hello World");
 });

@@ -20,7 +20,7 @@ const employeeSchema = mongoose.Schema({
   },
   spouse: {
     type: String,
-    default: "NOT MARRIED",
+
     required: false,
   },
   comments: {
