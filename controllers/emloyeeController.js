@@ -37,6 +37,24 @@ export const postEmployee = asyncHandler(async (req, res) => {
   }
 });
 
+
+
+// @desc Get single employee
+// @route GET /api/employee/:id
+// @access public
+export const getEmployeeById=asyncHandler(async(req,res)=>{
+  const employee=await Employee.find({_id:req.params.id});
+  if(employee)
+  {
+    res.status(200).json(employee);
+  }
+  else
+  {
+    res.status(400);
+    throw new Error("Employee Not Found")
+  }
+})
+
 // @desc Get all employees
 // @route GET /api/employee
 // @access public
@@ -101,3 +119,4 @@ export const updateEmployee = asyncHandler(async (req, res) => {
     throw new Error('Employee not found')
   }
 })
+
